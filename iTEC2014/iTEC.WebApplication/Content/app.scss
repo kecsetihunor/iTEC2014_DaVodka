@@ -1,0 +1,643 @@
+﻿$break-tiny: 320px;
+$break-small: 768px;
+$break-large: 1024px;
+
+@mixin crossBrowser($name, $data) {
+  -webkit-#{$name}: #{$data};
+  -moz-#{$name}: #{$data};
+  -o-#{$name}: #{$data};
+  -ms-#{$name}: #{$data};
+  -khtml-#{$name}: #{$data};
+  #{$name}: #{$data};
+}
+
+/*@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) { @content; }
+  }
+  @else if $media == mobile-portrait {
+    @media only screen and (max-device-width : 320px) { @content; }
+  }
+  @else if $media == mobile-landscape {
+    @media only screen and (min-device-width : 321px) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) { @content; }
+  }
+  @else if $media == tablet-portrait {
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { @content; }
+  }
+  @else if $media == tablet-landscape {
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width : 1024px) { @content; }
+  }
+  @else if $media == handhelds {
+    @media only screen and (max-width: 1024px) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == break-screens {
+    @media only screen and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}*/
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == break-screens {
+    @media only screen and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+  @else if $media == smaller-break-small {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == larger-break-small {
+    @media only screen and (min-width: $break-small) { @content; }
+  }
+  @else if $media == smaller-break-large {
+    @media only screen and (max-width: $break-large) { @content; }
+  }
+  @else if $media == mobile {
+    @media only screen and (min-width: $break-tiny) and (max-width: $break-small) { @content; }
+  }
+}
+ 
+.title {
+  max-width: $break-tiny;
+  margin: 0px auto;
+  
+  @include respond-to(smaller-break-small) {
+    font-size: 40px;
+  }
+}
+
+/* SHELL */
+.shell-container {
+  background: url('images/wallpaper.png');
+  background-position: center top;
+}
+
+.shell-content {
+  max-width: $break-large;
+  min-width: $break-tiny;
+  height: 100%;
+  margin: 0px auto;
+  box-sizing: border-box;
+  
+  .vertical-align {
+    text-align: center;
+  }
+}
+
+header {
+  display: none;
+  
+  &.visible {
+    display: block;
+  }
+}
+
+/* LOADING */
+.loading-container {
+  
+  .vertical-align {
+    text-align: center;
+  
+    .content {
+      .number {
+        margin-bottom: -5px;
+      }
+    }
+  }
+}
+
+/* CONTROLS */
+.group {
+  .error {
+    &.message {
+      @include respond-to(handhelds) {
+        display: block;
+      }
+    }
+  }
+}
+  
+.button {
+  @include respond-to(larger-break-small) {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 0px;
+    width: 300px;
+    
+    &:first-child {
+      margin-left: 0px;
+    }
+    
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+}
+
+.page-content {
+  @include respond-to(larger-break-small) {
+    min-width: 650px;
+  }
+  
+  @include respond-to(smaller-break-small) {
+    width: 90%;
+  } 
+}
+
+/* WELCOME */
+.welcome-container {
+  .title {
+    max-width: initial;
+    margin: 20px 0px 50px;
+    
+    @include respond-to(larger-break-small) {
+      font-size: 80px;
+    }
+  }
+  
+  .button {
+    padding: 15px 0px;
+  }
+}
+
+/* LOGIN */
+.login-container,
+.register-container {
+  .title {
+    margin: 15px 0px 25px;
+  }
+  
+  @include respond-to(handhelds) {
+    .title {
+      padding-bottom: 10px;
+    }
+  }
+  
+  > .message {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+.login-container {
+  .avatar {
+    position: absolute;
+    top: 25px;
+    left: -120px;
+    @include crossBrowser('transition', 'all 0.2s linear');
+  }
+  
+  @include respond-to(handhelds) {
+    .avatar {
+      position: relative;
+      top: -10px;
+      left: 0px;
+      margin: 0px auto;
+    }
+  }
+}
+
+/* HEADER */
+.header-container {
+  height: 70px;
+  line-height: 70px;
+  overflow: hidden;
+  z-index: 1;
+  
+  $logoSize: 234px;
+  $avatarSize: 50px;
+  $usernameSize: 150px;
+  
+  .logo {
+    left: 10px;
+    width: $logoSize;
+    transition: all 0.5s linear;
+    
+    a {
+      display: block;
+      width: $logoSize;
+      height: 100%;
+      background: url('images/logo.png');
+    }
+  }
+  
+  .account {
+    .avatar {
+      top: 10px;
+      right: $usernameSize;
+      width: $avatarSize;
+      height: $avatarSize;
+      @include crossBrowser('transition', 'all 0.5s linear');
+    }
+    
+    .info {
+      width: $usernameSize;
+      line-height: 15px;
+      padding: 20px 0px 20px 10px;
+      @include crossBrowser('transition', 'all 0.5s linear');
+      
+      .username {
+        width: 150px;
+      }
+      
+      .logout {
+        text-transform: lowercase;
+      }
+    }
+    
+    .bar {
+      right: 25px;
+      font-size: 23px;
+      cursor: pointer;
+      
+      @include respond-to(medium-screens) { display: none; }
+      @include respond-to(wide-screens) { display: none; }
+    }
+  }
+  
+  @include respond-to(handhelds) {
+    &.show {
+      .logo {
+        left: -100%;
+      }
+      
+      .account {
+        .avatar {
+          left: 10px;
+        }
+        
+        .info {
+          left: $avatarSize + 10px;
+        }
+      }
+    }
+  
+    &:not(.show) {
+      .avatar, .info {
+        right: auto;
+        left: 100%;
+      }
+    }
+  }
+}
+  
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  @include crossBrowser('text-overflow', 'ellipsis');
+}
+  
+.modal {
+  overflow: hidden;
+  
+  .modal-dialog {
+    margin: 0px auto;
+    padding: 20px;
+    width: $break-large;
+    height: 100%;
+  
+    .modal-content {
+      height: 100%;
+      
+      .modal-header {
+        height: 60px;
+        line-height: 60px;
+        padding: 0px;
+        
+        .modal-title {
+          margin: 0px;
+          font-weight: bold;
+          line-height: 60px;
+          padding-left: 20px;
+        }
+        
+        .close {
+          margin-top: 0px;
+          padding: 0px 20px;
+          font-size: 300%;
+          line-height: 60px;
+        }
+      }
+      
+      .modal-body {
+        top: 60px;
+        bottom: 60px;
+        padding: 0px;
+      }
+      
+      .modal-footer {
+        height: 60px;
+        padding: 9px 15px;
+        
+        .btn {
+          display: inline-block;
+          width: 150px;
+        }
+        
+        @include respond-to(handhelds) {
+          padding-left: 2%;
+          padding-right: 2%;
+          
+          .btn {
+            width: 49%;
+            margin: 0px;
+            
+            &:first-child {
+              float: left;
+            }
+          }
+        }
+      }
+    }
+    
+    @include respond-to(break-screens) {
+      width: auto;
+    }
+  }
+}
+
+/* RESERVATION */
+.reservation-container {
+  height: 100%;
+  
+  .circle {
+    width: 150px;
+    height: 150px;
+    margin: 0px 10px;
+    float: left;
+    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.7);
+    line-height: 130px;
+  
+    .text {
+      font-size: 25px;
+    }
+    
+    .icon {
+      font-size: 60px;
+    }
+  
+    @include respond-to(handhelds) {
+      width: 100px;
+      height: 100px;
+      line-height: 80px;
+      margin: 0px 2px;
+      
+      .icon {
+        font-size: 45px;
+      }
+  
+      &:hover {
+        .text {
+          opacity: 0;
+        }
+        
+        .icon {
+          opacity: 1;
+        }
+      }
+    }
+    
+    &:first-child {
+      margin-left: 0px;
+    }
+    
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+  
+  .types {
+    margin: 20px 0px 40px 0px;
+  }
+  
+  .modal {
+    .loader:not(.hidden) + .information {
+      display: none;
+    }
+    
+    .information {
+      .circle {
+        box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.7), 0px 1px 2px rgba(0, 0, 0, 0.1);
+        
+        .icon {
+          color: #536196;
+        }
+        
+        
+        &:not([disabled]):hover {
+          box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.01), 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        @include respond-to(handhelds) {
+          float: none;
+          margin: 0px 0px 25px 0px;
+          
+          &:last-child {
+            margin: 0px;
+          }
+        }
+      }
+      
+      .subtitle {
+        font-size: 120%;
+        font-weight: bold;
+        margin: 10px 0px;
+      }
+      
+      &.general {
+        .subtitle {
+          text-align: left;
+        }
+        
+        .about {
+          padding: 5px 20px;
+          width: 320px;
+          
+          @include respond-to(handhelds) {
+            width: auto;
+            right: 0px;
+            height: 200px;
+          }
+        }
+        
+        .images {
+          left: 320px;
+          padding: 20px 0px 5px 0px;
+          
+          .image {
+            float: left;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            box-shadow: 0px 0px 0px 1px #ccc;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+            filter: gray; /* IE6-9 */
+            -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+            
+            &:last-child {
+              margin-bottom: 0px;
+            }
+          }
+          
+          @include respond-to(handhelds) {
+            top: 200px;
+            left: 0px;
+            height: auto;
+            border-top: 1px solid #e5e5e5;
+            
+            .wrapper {
+              width: 310px;
+              margin: 0px auto;
+              
+              .image:nth-child(2n) {
+                margin-right: 0px;
+              }
+            }
+          }
+        }
+      }
+      
+      &.menu {
+        text-align: left;
+        padding: 5px 20px;
+        
+        .subtitle {
+          width: 100%;
+          text-align: center;
+        }
+        
+        .entry {
+          position: relative;
+          height: 30px;
+          line-height: 30px;
+          padding: 5px 0px 5px 5px;
+          border-bottom: 1px solid #e5e5e5;
+          
+          .name {
+            right: 50px;
+          }
+          
+          .price {
+            text-align: right;
+            width: 50px;
+          }
+        }
+      }
+    }
+  }
+  
+  .group.table {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    width: auto;
+    
+    > .content {
+      padding-left: 3%;
+      
+      > .result {
+        > div {
+          position: relative;
+          overflow: hidden;
+          background: none;
+          box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+          
+          > .text {
+            line-height: 20px;
+            text-align: left;
+            padding: 0px 20px;
+            opacity: 1;
+            cursor: pointer;
+            
+            > .name {
+              font-size: 110%;
+              font-weight: bold;
+              padding-top: 30px;
+            }
+            
+            > .address, .rating {
+              font-size: 90%;
+            }
+          }
+          
+          > .info, > .select {
+            font-size: 200%;
+            height: 50%;
+            line-height: 60px;
+            @include crossBrowser('transition', 'all 0.2s ease-in-out');
+            cursor: pointer;
+            
+            &:hover {
+              background: rgba(128, 128, 128, 0.2);
+            }
+          }
+          
+          > .info {
+            top: -50%;
+          }
+          
+          > .select {
+            bottom: -50%;
+          }
+          
+          &.active {
+            > .text {
+              opacity: 0.2;
+            }
+            
+            > .info {
+              top: 0px;
+              border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+            }
+            
+            > .select {
+              bottom: 0px;
+            }
+          }
+          
+          @include respond-to(handhelds) {
+            margin: -1px 2% 2% -1px;
+            width: 98%;
+          }
+          
+          @include respond-to(medium-screens) {
+            margin: -1px 2% 2% -1px;
+            width: 48%;
+          }
+        }
+      }
+      
+      > .message {
+        font-weight: bold;
+        font-size: 300%;
+        text-transform: uppercase;
+      
+        @include respond-to(handhelds) {
+          font-size: 200%;
+        }
+      }
+    }
+  }
+}

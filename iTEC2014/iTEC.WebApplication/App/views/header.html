@@ -1,0 +1,14 @@
+﻿<section class="header-container stretch top" data-bind="css: { show: isMenuShown }">
+    <div class="account">
+        <div class="avatar stretch right"></div>
+        <div class="info stretch right">
+            <div class="username" data-bind="text: navigationManager.username"></div>
+            <div class="logout">
+                <a href="#" data-bind="click: navigationManager.logout">Sign out</a>
+            </div>
+        </div>
+        <div class="bar stretch right" data-bind="click: toggleMenu">
+            <i class="fa fa-fw fa-lg fa-bars"></i>
+        </div>
+    </div>
+</section>

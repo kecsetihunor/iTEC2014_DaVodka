@@ -1,0 +1,7 @@
+D:\University\New folder\iTEC2014\iTEC.Model.Interfaces\bin\Release\iTEC.Model.Interfaces.dll
+D:\University\New folder\iTEC2014\iTEC.Model.Interfaces\bin\Release\iTEC.Model.Interfaces.pdb
+D:\University\New folder\iTEC2014\iTEC.Model.Interfaces\bin\Release\iTEC.Model.dll
+D:\University\New folder\iTEC2014\iTEC.Model.Interfaces\bin\Release\iTEC.Model.pdb
+D:\University\New folder\iTEC2014\iTEC.Model.Interfaces\obj\Release\iTEC.Model.Interfaces.csprojResolveAssemblyReference.cache
+D:\University\New folder\iTEC2014\iTEC.Model.Interfaces\obj\Release\iTEC.Model.Interfaces.dll
+D:\University\New folder\iTEC2014\iTEC.Model.Interfaces\obj\Release\iTEC.Model.Interfaces.pdb

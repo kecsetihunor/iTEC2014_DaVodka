@@ -1,0 +1,142 @@
+@import url('library.less');
+@import url('themes/unified.less');
+
+@button-color: #666;
+@hover-background-color: fade(@background-color, 50%);
+@disabled-background-color: fade(darken(@background-color, 20%), 50%);
+
+.blur {
+    text-shadow: 0px 0px 20px @base;
+    color: hsla(0,0%,0%,0);
+}
+
+body {
+    color: @body-foreground-color;
+    background: @body-background-color;
+}
+
+a, .color-highlight {
+    color: @link-foreground-color;
+
+    &:hover {
+        color: @link-hover-foreground-color;
+    }
+}
+
+.title {
+    color: @title-foreground-color;
+    background-color: @title-background-color;
+    border-color: @control-border-color;
+
+    &.users {
+        background-image: @title-users-background-image;
+    }
+
+    &.user {
+        background-image: @title-user-background-image;
+    }
+
+    &.categories {
+        background-image: @title-categories-background-image;
+    }
+
+    &.products {
+        background-image: @title-products-background-image;
+    }
+
+    &.vote {
+        background-image: @title-vote-background-image;
+    }
+
+    &.signin {
+        background-image: @title-signin-background-image;
+    }
+}
+
+.color-normal {
+    color: @foreground;
+}
+
+.loader {
+    border-color: @highlight @highlight fade(@invertBase, 20%) fade(@invertBase, 20%);
+}
+
+.group {
+    background: @control-background-color;
+    border-color: @control-border-color;
+
+    > .icon {
+        border-color: fade(@base, 70%);
+    }
+
+    &.table {
+        > .add {
+            border-color: @control-border-color;
+        }
+
+        &.select {
+            &.user,
+            &.product {
+                > .content {
+                    > .result {
+                        > .entry {
+                            &:not(.selected) {
+                                > .actions {
+                                    .toggle {
+                                        color: @control-disabled-foreground-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.captcha {
+        .content {
+            border-color: fade(@base, 70%);
+        }
+    }
+
+    &.action {
+        > .action {
+            border-color: fade(@base, 70%);
+        }
+    }
+
+    .error {
+        color: @error-color;
+
+        &.message {
+            border-color: @control-border-color;
+        }
+    }
+}
+
+.button {
+    color: @control-foreground-color;
+    background: @control-background-color;
+    border-color: @control-border-color;
+
+    &:hover {
+        color: @control-hover-foreground-color;
+        background: @control-hover-background-color;
+        border-color: @control-hover-border-color;
+    }
+
+    &[disabled],
+    &.disabled {
+        background: @control-disabled-background-color;
+        border-color: @control-disabled-border-color;
+    }
+}
+
+.loading-container {
+    background: @darkenBackground;
+
+    .content {
+        font-size: @font * 1.2;
+    }
+}

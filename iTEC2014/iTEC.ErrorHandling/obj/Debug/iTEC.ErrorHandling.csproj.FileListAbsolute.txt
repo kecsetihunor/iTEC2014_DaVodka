@@ -1,0 +1,4 @@
+D:\University\New folder\iTEC2014\iTEC.ErrorHandling\bin\Debug\iTEC.ErrorHandling.dll
+D:\University\New folder\iTEC2014\iTEC.ErrorHandling\bin\Debug\iTEC.ErrorHandling.pdb
+D:\University\New folder\iTEC2014\iTEC.ErrorHandling\obj\Debug\iTEC.ErrorHandling.dll
+D:\University\New folder\iTEC2014\iTEC.ErrorHandling\obj\Debug\iTEC.ErrorHandling.pdb

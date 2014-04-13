@@ -1,0 +1,7 @@
+﻿<div class="shell-container stretch scrollable">
+    <header class="text-selection-none" data-bind="compose: { model: 'viewmodels/header' }, css: { visible: navigationManager.isLoggedIn }"></header>
+    <section class="shell-content" data-bind="router: { cacheViews: false }"></section>
+    <!--<footer data-bind="compose: { model: 'viewmodels/footer' }"></footer>-->
+    
+    <div data-bind="compose: { view: 'templates' }"></div>
+</div>

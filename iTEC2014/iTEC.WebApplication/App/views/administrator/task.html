@@ -1,0 +1,39 @@
+﻿<div class="task-container vertical-align">
+    <div class="content">
+        <div class="types clearfix">
+            <a class="circle" title="Manage groups" data-bind="attr: { href: hash.groups }">
+                <span class="icon"><i class="fa fa-fw fa-users content"></i></span>
+                <span class="text">
+                    <span class="content">Groups</span>
+                </span>
+            </a>
+            <a class="circle" title="Manage users" data-bind="attr: { href: hash.users }">
+                <span class="icon"><i class="fa fa-fw fa-user content"></i></span>
+                <span class="text">
+                    <span class="content">Users</span>
+                </span>
+            </a>
+            <a class="circle" title="Manage categories" data-bind="attr: { href: hash.menu }">
+                <span class="icon"><i class="fa fa-fw fa-cutlery content"></i></span>
+                <span class="text">
+                    <span class="content">Categories</span>
+                </span>
+            </a>
+            <a class="circle" title="Report" data-bind="attr: { href: hash.report }">
+                <span class="icon"><i class="fa fa-fw fa-signal content"></i></span>
+                <span class="text">
+                    <span class="content">Report</span>
+                </span>
+            </a>
+        </div>
+
+        <div class="welcome">
+            <form role="form" data-bind="validate: { submit: submit, entity: entity }, with: entity">
+                <div class="group control" data-bind="template: { name: 'textfield-template', data: messageBody }"></div>
+                <div class="group submit horizontal">
+                    <button type="submit" class="button">Change</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿<div class="vertical-align text-selection-none">
+    <div class="content">
+        <section class="login-container centered medium relative">
+            <div class="title signin">Sign in</div>
+            <form role="form" class="relative" data-bind="validate: { submit: submit, entity: entity }, with: entity">
+                <div class="avatar" data-bind="style: { backgroundImage: avatar }"></div>
+                <div class="group control" data-bind="template: { name: 'textfield-template', data: username }"></div>
+                <div class="group control" data-bind="template: { name: 'textfield-template', data: password }"></div>
+                <div class="group control checkbox" data-bind="template: { name: 'checkbox-template', data: remember }"></div>
+                <div>
+                    <button type="submit" class="button" data-loading-text="Signing in...">Sign in</button>
+                    <!-- ko if: isAvailable -->
+                    <a href="#" class="button" data-bind="visible: isAvailable, click: $root.clear">Switch user</a>
+                    <!-- /ko -->
+                </div>
+            </form>
+            <div class="message" data-bind="with: hash">
+                Are you new around here?
+                <a href="#" data-bind="attr: { href: register }">Join us</a> today.
+            </div>
+        </section>
+    </div>
+</div>
+
+<!--536196-->

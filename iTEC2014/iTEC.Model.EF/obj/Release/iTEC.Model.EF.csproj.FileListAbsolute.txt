@@ -1,0 +1,14 @@
+D:\University\New folder\iTEC2014\iTEC.Model.EF\bin\Release\iTEC.Model.EF.dll.config
+D:\University\New folder\iTEC2014\iTEC.Model.EF\bin\Release\iTEC.Model.EF.dll
+D:\University\New folder\iTEC2014\iTEC.Model.EF\bin\Release\iTEC.Model.EF.pdb
+D:\University\New folder\iTEC2014\iTEC.Model.EF\bin\Release\EntityFramework.dll
+D:\University\New folder\iTEC2014\iTEC.Model.EF\bin\Release\EntityFramework.SqlServer.dll
+D:\University\New folder\iTEC2014\iTEC.Model.EF\bin\Release\iTEC.Model.dll
+D:\University\New folder\iTEC2014\iTEC.Model.EF\bin\Release\iTEC.Model.Interfaces.dll
+D:\University\New folder\iTEC2014\iTEC.Model.EF\bin\Release\iTEC.Model.Interfaces.pdb
+D:\University\New folder\iTEC2014\iTEC.Model.EF\bin\Release\iTEC.Model.pdb
+D:\University\New folder\iTEC2014\iTEC.Model.EF\bin\Release\EntityFramework.xml
+D:\University\New folder\iTEC2014\iTEC.Model.EF\bin\Release\EntityFramework.SqlServer.xml
+D:\University\New folder\iTEC2014\iTEC.Model.EF\obj\Release\iTEC.Model.EF.csprojResolveAssemblyReference.cache
+D:\University\New folder\iTEC2014\iTEC.Model.EF\obj\Release\iTEC.Model.EF.dll
+D:\University\New folder\iTEC2014\iTEC.Model.EF\obj\Release\iTEC.Model.EF.pdb

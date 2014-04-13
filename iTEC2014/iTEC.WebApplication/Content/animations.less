@@ -1,0 +1,37 @@
+﻿@import url('library.less');
+@import url('themes/white.less');
+
+.enlargeon {
+  from { font-size: inherit; }
+  to { font-size: @font * 1.35; }
+}
+
+@-webkit-keyframes enlargeon { .enlargeon; }
+@-moz-keyframes enlargeon { .enlargeon; }
+@-ms-keyframes enlargeon { .enlargeon; }
+@-o-keyframes enlargeon { .enlargeon; }
+@keyframes enlargeon { .enlargeon; }
+
+.bluroff {
+  to {
+    text-shadow: none;
+    color: @lightenForeground;
+  }
+}
+
+@-webkit-keyframes bluroff { .bluroff; }
+@-moz-keyframes bluroff { .bluroff; }
+@-ms-keyframes bluroff { .bluroff; }
+@-o-keyframes bluroff { .bluroff; }
+@keyframes bluroff { .bluroff; }
+
+.spin {
+  from { .crossBrowser(transform, rotate(0deg)); }
+  to { .crossBrowser(transform, rotate(359deg)); }
+}
+
+@-webkit-keyframes spin { .spin; }
+@-moz-keyframes spin { .spin; }
+@-ms-keyframes spin { .spin; }
+@-o-keyframes spin { .spin; }
+@keyframes spin { .spin; }

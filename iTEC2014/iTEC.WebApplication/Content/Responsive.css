@@ -1,0 +1,86 @@
+@media only screen and (max-width: 767px) {
+  .group.scedule > .content {
+    display: none;
+  }
+  .group.scedule > .content > .schedule > .name {
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+  }
+  .group .error.message {
+    display: block;
+  }
+  .header-container.show .logo {
+    left: -100%;
+  }
+  .header-container.show .account .avatar {
+    left: 10px;
+  }
+  .header-container.show .account .info {
+    left: 60px;
+  }
+  .header-container:not(.show) .avatar,
+  .header-container:not(.show) .info {
+    right: auto;
+    left: 100%;
+  }
+  .page-content {
+    width: 90%;
+  }
+  .login-container .avatar {
+    position: relative;
+    top: -10px;
+    left: 0px;
+    margin: 0px auto;
+  }
+  .task-container .types .circle {
+    width: 80px;
+    height: 80px;
+    line-height: 60px;
+    margin: 2px;
+  }
+  .task-container .types .circle .icon {
+    font-size: 45px;
+  }
+  .task-container .types .circle:hover .text {
+    opacity: 0;
+  }
+  .task-container .types .circle:hover .icon {
+    opacity: 1;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .page-content {
+    width: 650px;
+  }
+  .group.horizontal > .button:not(:only-child) {
+    float: left;
+    margin-top: 0px;
+    width: 48%;
+  }
+  .group.horizontal > .button:not(:only-child):first-child {
+    margin-left: 0px;
+  }
+  .group.horizontal > .button:not(:only-child):not(:first-child) {
+    margin-left: 4%;
+    /*margin-top: 20px;*/
+  }
+  .header-container .account .bar {
+    display: none;
+  }
+  .welcome-container {
+    padding-bottom: 10%;
+  }
+  .welcome-container .title {
+    font-size: 80px;
+  }
+  .welcome-container .group.horizontal > .button:not(:only-child):first-child {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10px;
+  }
+  .welcome-container .group.horizontal > .button:nth-child(2) {
+    margin-left: 0px;
+  }
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="535eb626-fa63-4fc0-951a-4ba4f9a168a7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55502/DelightService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DelightService.disco" MetadataType="Disco" ID="a9ea1eef-c63c-4e6e-b97f-a1058e070322" SourceId="1" SourceUrl="http://localhost:55502/DelightService.svc?disco" />
+    <MetadataFile FileName="DelightService3.xsd" MetadataType="Schema" ID="b49b7c79-d767-45a4-a9f3-cbfbe5d572ac" SourceId="1" SourceUrl="http://localhost:55502/DelightService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DelightService2.xsd" MetadataType="Schema" ID="cd95a171-80df-4dfa-af8b-55c3ff11085b" SourceId="1" SourceUrl="http://localhost:55502/DelightService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DelightService.wsdl" MetadataType="Wsdl" ID="96e7ae07-6786-4c56-9b39-df8e74d5886b" SourceId="1" SourceUrl="http://localhost:55502/DelightService.svc?wsdl" />
+    <MetadataFile FileName="DelightService1.xsd" MetadataType="Schema" ID="23c12cf6-b80a-4486-a785-8641b61043be" SourceId="1" SourceUrl="http://localhost:55502/DelightService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DelightService.xsd" MetadataType="Schema" ID="8bcaf3c6-3142-4b85-b00d-f7710ffd5149" SourceId="1" SourceUrl="http://localhost:55502/DelightService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,245 @@
+﻿<script type="text/html" id="inline-validation">
+    <span rel="tooltip" class="error notification" data-bind="validationTitleMessage: field">
+        <i class="fa fa-fw fa-lg fa-times"></i>
+    </span>
+    <span class="error message" data-bind="validationMessage: field"></span>
+</script>
+
+<script type="text/html" id="hidden-template">
+    <input type="hidden" data-bind="value: value">
+</script>
+
+<script type="text/html" id="checkbox-template">
+    <label class="icon vertical-align" data-bind="attr: { for: cid }">
+        <i data-bind="attr: { class: 'fa fa-fw fa-lg ' + icon() + ' content' }"></i>
+    </label>
+    <label class="text" data-bind="text: text, attr: { for: cid }"></label>
+    <input type="checkbox" data-bind="checked: value, attr: { id: cid }" />
+</script>
+
+<script type="text/html" id="textfield-template">
+    <label class="icon vertical-align" data-bind="attr: { for: cid }">
+        <i data-bind="attr: { class: 'fa fa-fw fa-lg ' + icon() + ' content' }"></i>
+    </label>
+    <input data-bind="value: value, valueUpdate: 'keyup', attr: { placeholder: text, id: cid, type: type }">
+</script>
+
+<script type="text/html" id="addontextfield-template">
+    <label class="icon vertical-align" data-bind="attr: { for: cid }">
+        <i data-bind="attr: { class: 'fa fa-fw fa-lg ' + icon() + ' content' }"></i>
+    </label>
+    <input data-bind="value: value, valueUpdate: 'keyup', attr: { placeholder: text, id: cid, type: type }">
+    <label class="action vertical-align" data-bind="click: action.click">
+        <i data-bind="attr: { class: 'fa fa-fw fa-lg ' + action.icon() + ' content' }"></i>
+    </label>
+</script>
+
+<script type="text/html" id="captcha-template">
+    <label class="icon vertical-align" data-bind="attr: { for: cid }">
+        <i data-bind="attr: { class: 'fa fa-fw fa-lg ' + icon() + ' content' }"></i>
+    </label>
+    <div class="content">
+        <div class="loader" data-bind="css: { off: ready }"></div>
+        <div class="image stretch" data-bind="style: { backgroundImage: image }, css: { on: ready }, click: refresh" />
+    </div>
+    <input data-bind="value: value, valueUpdate: 'keyup', attr: { placeholder: text, id: cid, type: type }">
+</script>
+
+<script type="text/html" id="infinite-scroll-template">
+    <div class="content" data-bind="infinite: { value: value, load: load, offset: 800 }">
+        <div class="result clearfix">
+            <div data-bind="text: $data"></div>
+        </div>
+        <div class="status vertical-align">
+            <div class="loader content"></div>
+        </div>
+        <div class="message stretch vertical-align">Nothing to display</div>
+    </div>
+</script>
+
+<script type="text/html" id="search-name-template">
+    <div class="header stretch top">
+        <input type="text" data-bind="attr: { placeholder: text, id: cid }, value: criteria, valueUpdate: 'keyup'" />
+    </div>
+    <div class="content scrollable" data-bind="infinite: { value: value, load: load, offset: 800 }">
+        <div class="result clearfix">
+            <div data-bind="click: $parents[1].mark, css: { active: active }">
+                <div class="text stretch">
+                    <div class="name ellipsis" data-bind="text: name"></div>
+                    <div class="address ellipsis">
+                        <i class="fa fa-fw fa-map-marker"></i>
+                        <span data-bind="text: address"></span>
+                    </div>
+                    <div class="rating ellipsis">
+                        <i class="fa fa-fw fa-star"></i>
+                        <span data-bind="text: 'Rating: ' + rating() + '/5'"></span>
+                    </div>
+                </div>
+                <div class="info stretch top" data-bind="click: $parents[1].info"><i class="fa fa-fw fa-lg fa-info"></i></div>
+                <div class="select stretch bottom" data-bind="click: $root.select"><i class="fa fa-fw fa-lg fa-check"></i></div>
+            </div>
+        </div>
+        <div class="status vertical-align">
+            <div class="loader content"></div>
+        </div>
+        <div class="message stretch vertical-align">Nothing to display</div>
+    </div>
+</script>
+
+<script type="text/html" id="manage-entities-template">
+    <div class="content scrollable">
+        <div class="result" data-bind="foreach: list, css: { empty: isEmpty }">
+            <div class="entry">
+                <div class="name" data-bind="text: name"></div>
+                <div class="actions">
+                    <a class="details" href="#" data-bind="attr: { href: hash.details }"><i class="fa fa-fw fa-pencil"></i></a>
+                    <a class="remove" href="#" data-bind="click: $parent.remove"><i class="fa fa-fw fa-times"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="status stretch vertical-align" data-bind="hidden: isReady">
+            <div class="loader content"></div>
+        </div>
+        <div class="message stretch vertical-align" data-bind="visible: isEmpty">
+            <i class="fa fa-fw fa-lg fa-warning"></i> Nothing to display
+        </div>
+    </div>
+    <a href="#" class="button add" data-bind="attr: { href: hash.add }"><i class="fa fa-fw fa-lg fa-plus"></i></a>
+</script>
+
+<script type="text/html" id="manage-user-template">
+    <div class="content scrollable">
+        <div class="result" data-bind="foreach: list, css: { empty: isEmpty }">
+            <div class="entry">
+                <div class="name" data-bind="text: username"></div>
+                <div class="actions">
+                    <a class="details" href="#" data-bind="attr: { href: hash.details }"><i class="fa fa-fw fa-pencil"></i></a>
+                    <a class="remove" href="#" data-bind="click: $parent.remove"><i class="fa fa-fw fa-times"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="status stretch vertical-align" data-bind="hidden: isReady">
+            <div class="loader content"></div>
+        </div>
+        <div class="message stretch vertical-align" data-bind="visible: isEmpty">
+            <i class="fa fa-fw fa-lg fa-warning"></i> Nothing to display
+        </div>
+    </div>
+    <a href="#" class="button add" data-bind="attr: { href: hash.add }"><i class="fa fa-fw fa-lg fa-plus"></i></a>
+</script>
+
+<script type="text/html" id="select-user-template">
+    <div class="content scrollable text-selection-none">
+        <div class="result" data-bind="foreach: list, css: { empty: isEmpty }">
+            <div class="entry" data-bind="css: { selected: inGroup }">
+                <div class="username" data-bind="text: username"></div>
+                <div class="actions">
+                    <a href="#" class="toggle" data-bind="click: $parent.toggle"><i class="fa fa-fw fa-check"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="status stretch vertical-align" data-bind="hidden: isReady">
+            <div class="loader content"></div>
+        </div>
+        <div class="message stretch vertical-align" data-bind="visible: isEmpty">
+            <i class="fa fa-fw fa-lg fa-warning"></i> Nothing to display
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="select-product-template">
+    <div class="content scrollable text-selection-none">
+        <div class="result" data-bind="foreach: list, css: { empty: isEmpty }">
+            <div class="entry" data-bind="css: { selected: inGroup }">
+                <div class="name" data-bind="text: name"></div>
+                <div class="actions">
+                    <a href="#" class="details" data-bind="attr: { href: hash.details }"><i class="fa fa-fw fa-pencil"></i></a>
+                    <a href="#" class="toggle" data-bind="click: $parent.toggle"><i class="fa fa-fw fa-check"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="status stretch vertical-align" data-bind="hidden: isReady">
+            <div class="loader content"></div>
+        </div>
+        <div class="message stretch vertical-align" data-bind="visible: isEmpty">
+            <i class="fa fa-fw fa-lg fa-warning"></i> Nothing to display
+        </div>
+    </div>
+    <a href="#" class="button add" data-bind="attr: { href: $root.hash.add }"><i class="fa fa-fw fa-lg fa-plus"></i></a>
+</script>
+
+<script type="text/html" id="vote-category-template">
+    <div class="content scrollable">
+        <div class="result" data-bind="foreach: list, css: { empty: isEmpty }">
+            <div class="entry">
+                <div class="name" data-bind="text: name"></div>
+                <div class="points"><span data-bind="text: points"></span> <i class="fa fa-fw fa-money"></i></div>
+                <div class="count"><span data-bind="text: count"></span> <i class="fa fa-fw fa-gift"></i></div>
+                <a class="step" href="#" data-bind="click: $parents[1].selectCategory"><i class="fa fa-fw fa-lg fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="status stretch vertical-align" data-bind="hidden: isReady">
+            <div class="loader content"></div>
+        </div>
+        <div class="message stretch vertical-align" data-bind="visible: isEmpty">
+            <i class="fa fa-fw fa-lg fa-warning"></i> Nothing to display
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="vote-product-template">
+    <div class="content scrollable">
+        <div class="result" data-bind="foreach: list, css: { empty: isEmpty }">
+            <div class="entry" data-bind="css: { selected: selected }">
+                <div class="name" data-bind="text: name"></div>
+                <div class="points"><span data-bind="text: points"></span> <i class="fa fa-fw fa-money"></i></div>
+                <a href="#" class="toggle" data-bind="click: $parents[1].selectProduct, hidden: selected"><i class="fa fa-fw fa-lg fa-chevron-down"></i></a>
+                <div class="voter" data-bind="if: selected()">
+                    <input class="slider" data-bind="slider: { points: votePoints, options: { min: 0, value: votePoints, max: $parents[1].limit, tooltip: 'hide' } }" type="text">
+                    <span class="limit">
+                        <span data-bind="text: votePoints"></span> / <span data-bind="text: $parents[1].limit"></span>
+                    </span>
+                    <a href="#" class="vote" data-bind="click: $parents[1].voteProduct"><i class="fa fa-fw fa-lg fa-check"></i> Vote</a>
+                </div>
+            </div>
+        </div>
+        <div class="status stretch vertical-align" data-bind="hidden: isReady">
+            <div class="loader content"></div>
+        </div>
+        <div class="message stretch vertical-align" data-bind="visible: isEmpty">
+            <i class="fa fa-fw fa-lg fa-warning"></i> Nothing to display
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="vote-template">
+    <div class="header stretch top">
+        <input type="text" placeholder="Search for categories" data-bind="attr: { id: cid }, value: criteria, valueUpdate: 'keyup'" />
+    </div>
+    <div class="content categories scrollable" data-bind="infinite: { value: value, load: load, offset: 800 }">
+        <div class="result clearfix">
+            <div class="category" data-bind="css: { selected: selected }">
+                <div class="back" data-bind="visible: selected, click: $parent.unselect">
+                    <i class="fa fa-fw fa-lg fa-chevron-left"></i>
+                </div>
+                <div class="information" data-bind="click: $parent.select">
+                    <div class="name" data-bind="text: name"></div>
+                    <div class="count"><span data-bind="text: count"></span> entries</div>
+                </div>
+                <div class="products scrollable" data-bind="foreach: products">
+                    <div class="products">
+                        <div class="name" data-bind="text: name"></div>
+                        <div class="cost" data-bind="text: points"></div>
+                        <div class="actions">
+                            <button class="button" data-bind="click: $root.select"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="status vertical-align">
+            <div class="loader content"></div>
+        </div>
+        <div class="message stretch vertical-align">Nothing to display</div>
+    </div>
+</script>

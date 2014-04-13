@@ -1,0 +1,16 @@
+﻿<div class="management-container vertical-align">
+    <div class="content">
+        <div class="title user">
+            <a class="left" href="#" data-bind="attr: { href: hash.cancel }"><i class="fa fa-fw fa-lg fa-chevron-left"></i></a>
+            Group details
+        </div>
+        <form role="form" data-bind="validate: { submit: submit, entity: entity }, with: entity">
+            <div class="group control" data-bind="template: { name: 'textfield-template', data: name }"></div>
+            <div class="group control" data-bind="template: { name: 'textfield-template', data: points }"></div>
+            <div class="group table select user" data-bind="template: { name: 'select-user-template', data: users }"></div>
+            <div class="group submit">
+                <button type="submit" class="button" data-loading-text="Saving...">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

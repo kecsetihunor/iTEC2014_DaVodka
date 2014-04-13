@@ -1,0 +1,21 @@
+﻿<div class="vertical-align text-selection-none">
+    <div class="content">
+        <section class="register-container centered medium relative">
+            <div class="title signin">Join us</div>
+            <form role="form" data-bind="validate: { submit: submit, entity: entity }, with: entity">
+                <div class="group control" data-bind="template: { name: 'textfield-template', data: username }"></div>
+                <div class="group control" data-bind="template: { name: 'textfield-template', data: password }"></div>
+                <div class="group control" data-bind="template: { name: 'textfield-template', data: confirm }"></div>
+                <div class="group control" data-bind="template: { name: 'textfield-template', data: email }"></div>
+                <div class="group control captcha" data-bind="template: { name: 'captcha-template', data: captcha }"></div>
+                <div>
+                    <button type="submit" class="button" data-loading-text="Signing up...">Sign up</button>
+                </div>
+            </form>
+            <div class="message" data-bind="with: hash">
+                Already have an account?
+                <a href="#" data-bind="attr: { href: login }">Sign in</a> right now.
+            </div>
+        </section>
+    </div>
+</div>

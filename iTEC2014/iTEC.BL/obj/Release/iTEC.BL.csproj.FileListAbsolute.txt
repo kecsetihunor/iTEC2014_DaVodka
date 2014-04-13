@@ -1,0 +1,13 @@
+D:\University\New folder\iTEC2014\iTEC.BL\bin\Release\iTEC.BL.dll
+D:\University\New folder\iTEC2014\iTEC.BL\bin\Release\iTEC.BL.pdb
+D:\University\New folder\iTEC2014\iTEC.BL\bin\Release\iTEC.BL.Interfaces.dll
+D:\University\New folder\iTEC2014\iTEC.BL\bin\Release\iTEC.ErrorHandling.dll
+D:\University\New folder\iTEC2014\iTEC.BL\bin\Release\iTEC.Model.dll
+D:\University\New folder\iTEC2014\iTEC.BL\bin\Release\iTEC.Model.Interfaces.dll
+D:\University\New folder\iTEC2014\iTEC.BL\bin\Release\iTEC.BL.Interfaces.pdb
+D:\University\New folder\iTEC2014\iTEC.BL\bin\Release\iTEC.ErrorHandling.pdb
+D:\University\New folder\iTEC2014\iTEC.BL\bin\Release\iTEC.Model.Interfaces.pdb
+D:\University\New folder\iTEC2014\iTEC.BL\bin\Release\iTEC.Model.pdb
+D:\University\New folder\iTEC2014\iTEC.BL\obj\Release\iTEC.BL.csprojResolveAssemblyReference.cache
+D:\University\New folder\iTEC2014\iTEC.BL\obj\Release\iTEC.BL.dll
+D:\University\New folder\iTEC2014\iTEC.BL\obj\Release\iTEC.BL.pdb

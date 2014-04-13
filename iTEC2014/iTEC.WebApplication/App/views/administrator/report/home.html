@@ -1,0 +1,26 @@
+﻿<div class="management-container">
+    <div class="content">
+        <div class="title categories">
+            <a class="left" href="#" data-bind="attr: { href: hash.task }"><i class="fa fa-fw fa-lg fa-chevron-left"></i></a>
+            Reporting
+        </div>
+        
+        <div class="group submit">
+            <a href="#" class="button" data-bind="click: startSession">New session</a>
+        </div>
+        
+        <form role="form" data-bind="validate: { submit: submit, entity: entity }, with: entity">
+            <div class="group control" data-bind="template: { name: 'textfield-template', data: money }"></div>
+            <div class="group submit horizontal">
+                <button type="submit" class="button">Generate buget report</button>
+            </div>
+        </form>
+        
+        <div class="group submit">
+            <a href="#" class="button" data-bind="click: getProductVoteReport">Generate product vote report</a>
+        </div>
+
+        <div id="container" style="width:500px; height:400px;" data-bind="chart: chart"></div>
+        <a href="#" data-bind="attr: { href: link }">Download report</a>
+    </div>
+</div>

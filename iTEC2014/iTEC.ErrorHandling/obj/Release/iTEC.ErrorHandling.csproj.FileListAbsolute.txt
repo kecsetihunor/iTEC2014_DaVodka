@@ -1,0 +1,5 @@
+D:\University\New folder\iTEC2014\iTEC.ErrorHandling\bin\Release\iTEC.ErrorHandling.dll
+D:\University\New folder\iTEC2014\iTEC.ErrorHandling\bin\Release\iTEC.ErrorHandling.pdb
+D:\University\New folder\iTEC2014\iTEC.ErrorHandling\obj\Release\iTEC.ErrorHandling.csprojResolveAssemblyReference.cache
+D:\University\New folder\iTEC2014\iTEC.ErrorHandling\obj\Release\iTEC.ErrorHandling.dll
+D:\University\New folder\iTEC2014\iTEC.ErrorHandling\obj\Release\iTEC.ErrorHandling.pdb

@@ -1,0 +1,6 @@
+D:\University\New folder\iTEC2014\iTEC.Services.AccessLayer\bin\Debug\iTEC.Services.AccessLayer.dll.config
+D:\University\New folder\iTEC2014\iTEC.Services.AccessLayer\bin\Debug\iTEC.Services.AccessLayer.dll
+D:\University\New folder\iTEC2014\iTEC.Services.AccessLayer\bin\Debug\iTEC.Services.AccessLayer.pdb
+D:\University\New folder\iTEC2014\iTEC.Services.AccessLayer\obj\Debug\iTEC.Services.AccessLayer.dll
+D:\University\New folder\iTEC2014\iTEC.Services.AccessLayer\obj\Debug\iTEC.Services.AccessLayer.pdb
+D:\University\New folder\iTEC2014\iTEC.Services.AccessLayer\obj\Debug\iTEC.Services.AccessLayer.csprojResolveAssemblyReference.cache

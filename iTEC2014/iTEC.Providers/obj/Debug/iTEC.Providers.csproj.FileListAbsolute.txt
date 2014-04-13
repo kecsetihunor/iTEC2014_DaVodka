@@ -1,0 +1,9 @@
+D:\University\New folder\iTEC2014\iTEC.Providers\bin\Debug\iTEC.Providers.dll.config
+D:\University\New folder\iTEC2014\iTEC.Providers\bin\Debug\iTEC.Providers.dll
+D:\University\New folder\iTEC2014\iTEC.Providers\bin\Debug\iTEC.Providers.pdb
+D:\University\New folder\iTEC2014\iTEC.Providers\bin\Debug\EntityFramework.dll
+D:\University\New folder\iTEC2014\iTEC.Providers\bin\Debug\EntityFramework.SqlServer.dll
+D:\University\New folder\iTEC2014\iTEC.Providers\bin\Debug\EntityFramework.xml
+D:\University\New folder\iTEC2014\iTEC.Providers\bin\Debug\EntityFramework.SqlServer.xml
+D:\University\New folder\iTEC2014\iTEC.Providers\obj\Debug\iTEC.Providers.dll
+D:\University\New folder\iTEC2014\iTEC.Providers\obj\Debug\iTEC.Providers.pdb

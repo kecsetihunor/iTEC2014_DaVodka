@@ -1,0 +1,5 @@
+D:\University\New folder\iTEC2014\iTEC.Services\bin\iTEC.Model.Interfaces.dll
+D:\University\New folder\iTEC2014\iTEC.Services\bin\iTEC.Model.Interfaces.pdb
+D:\University\New folder\iTEC2014\iTEC.Model.Interfaces\obj\Debug\iTEC.Model.Interfaces.csprojResolveAssemblyReference.cache
+D:\University\New folder\iTEC2014\iTEC.Model.Interfaces\obj\Debug\iTEC.Model.Interfaces.dll
+D:\University\New folder\iTEC2014\iTEC.Model.Interfaces\obj\Debug\iTEC.Model.Interfaces.pdb

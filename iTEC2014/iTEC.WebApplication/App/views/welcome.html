@@ -1,0 +1,25 @@
+﻿<div class="welcome-container vertical-align text-selection-none">
+    <div class="page-content content">
+        <div class="title">
+            Pick-a-place
+        </div>
+        <div data-bind="visible: navigationManager.isLoggedIn">
+            <div class="group submit horizontal clearfix" data-bind="visible: navigationManager.isUser">
+                <a href="#" class="button" data-bind="attr: { href: hash.search }">Find a place</a>
+            </div>
+            <div class="group submit horizontal clearfix" data-bind="visible: navigationManager.isDelegate">
+                <a href="#" class="button" data-bind="attr: { href: hash.search }">Manage your place</a>
+            </div>
+            <div class="group submit horizontal clearfix" data-bind="visible: navigationManager.isOwner">
+                <a href="#" class="button" data-bind="attr: { href: hash.search }">Manage your places</a>
+            </div>
+        </div>
+        <div data-bind="hidden: navigationManager.isLoggedIn">
+            <div class="group submit horizontal clearfix">
+                <a href="#" class="button" data-bind="attr: { href: hash.login }">Find a place</a>
+                <a href="#" class="button" data-bind="attr: { href: hash.join }">Join us</a>
+                <a href="#" class="button" data-bind="attr: { href: hash.register }">Register a new place</a>
+            </div>
+        </div>
+    </div>
+</div>

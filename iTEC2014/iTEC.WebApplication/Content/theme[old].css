@@ -1,0 +1,96 @@
+.white-blue {
+    background: #ecf0f1;
+    color: #2c3e50;
+}
+
+    .white-blue a, .white-blue .color-highlight {
+        color: #3498db;
+    }
+
+        .white-blue a:hover, .white-blue .color-highlight:hover {
+            color: #4aa3df;
+        }
+
+    .white-blue .color-normal {
+        color: #2c3e50;
+    }
+
+    .white-blue .loader {
+	    border-bottom-color: rgba(0, 0, 0, 0.2);
+	    border-left-color: rgba(0, 0, 0, 0.2);
+	    border-right-color: #3498db;
+	    border-top-color: #3498db;
+    }
+
+    .white-blue .group.control,
+    .white-blue .group.checkbox {
+        background: #fff;
+        border-color: #3498db;
+        border-bottom-color: #222;
+        box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.50), 0px 3px 2px -3px #fff;
+    }
+
+        .white-blue .group.control label:first-child,
+        .white-blue .group.checkbox label:first-child,
+        .white-blue .group.control.captcha .content {
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .white-blue .group.control input + span.error {
+            color: #e74c3c;
+        }
+
+    .white-blue .group.button {
+        color: #ecf0f1;
+    }
+
+    .white-blue .btn {
+        box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.50), 0px 3px 2px -3px #fff;
+    }
+
+    .white-blue .breadcrumb > .links > a {
+        box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.50), 0px 3px 2px -3px #fff;
+	    background: #f8f8f8;
+    }
+
+        .white-blue .breadcrumb > .links > a:after {
+            box-shadow: inset -1px 1px 0px 0px rgba(0, 0, 0, 0.30);
+	    }
+
+    .white-blue .btn,
+    .white-blue .breadcrumb > .links > a.active,
+    .white-blue .breadcrumb > .links > a.done {
+        background: #3498db;
+        color: #ecf0f1;
+    }
+
+        .white-blue .btn:hover,
+        .white-blue .breadcrumb > .links > a.active:hover,
+        .white-blue .breadcrumb > .links > a.done:hover {
+            background: #4aa3df;
+            color: inherit;
+        }
+
+        .white-blue .btn:active,
+        .white-blue .breadcrumb > .links > a.active:active,
+        .white-blue .breadcrumb > .links > a.done:active {
+            background: #2387ca;
+        }
+
+        .white-blue .btn[disabled],
+        .white-blue .btn.disabled {
+            background: #95a5a6;
+        }
+
+        .white-blue .btn.menu {
+            background: #ecf0f1;
+            color: #95a5a6;
+        }
+
+            .white-blue .btn.menu:hover {
+                background: #dce0e1;
+            }
+
+::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
+    color: #bdc3c7;
+}

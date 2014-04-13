@@ -1,0 +1,6 @@
+D:\University\New folder\iTEC2014\iTEC.Services\bin\iTEC.Model.dll.config
+D:\University\New folder\iTEC2014\iTEC.Services\bin\iTEC.Model.dll
+D:\University\New folder\iTEC2014\iTEC.Services\bin\iTEC.Model.pdb
+D:\University\New folder\iTEC2014\iTEC.Model\obj\Debug\iTEC.Model.dll
+D:\University\New folder\iTEC2014\iTEC.Model\obj\Debug\iTEC.Model.pdb
+D:\University\New folder\iTEC2014\iTEC.Model\obj\Debug\iTEC.Model.csprojResolveAssemblyReference.cache

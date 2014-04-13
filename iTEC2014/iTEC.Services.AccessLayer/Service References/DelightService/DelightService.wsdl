@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DelightService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55502/DelightService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55502/DelightService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55502/DelightService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/iTEC.BL.Interfaces.DTOs" />
+      <xsd:import schemaLocation="http://localhost:55502/DelightService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDelightService_GetAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetUserStateInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserStateInfo" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetUserStateInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserStateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_RegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_RegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_RegisterOwner_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterOwner" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_RegisterOwner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterOwnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetAccountId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountId" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetAccountId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategories" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategory" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetVotedCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVotedCategories" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetVotedCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVotedCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetProductsFromCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsFromCategory" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetProductsFromCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsFromCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_AddProductToCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToCategory" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_AddProductToCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_RemoveProductFromCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductFromCategory" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_RemoveProductFromCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductFromCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_DeleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_DeleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_SaveCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCategory" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_SaveCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProduct" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetAllProductsCompareToSpecificCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsCompareToSpecificCategory" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetAllProductsCompareToSpecificCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsCompareToSpecificCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_SaveProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProduct" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_SaveProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetUserGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserGroups" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetUserGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetUserGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserGroup" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetUserGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetUsersFromGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersFromGroup" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetUsersFromGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersFromGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_AddUserToGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserToGroup" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_AddUserToGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_RemoveUserFromGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserFromGroup" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_RemoveUserFromGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserFromGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_DeleteUserGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserGroup" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_DeleteUserGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_SaveUserGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserGroup" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_SaveUserGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetAllUsersCompareToSpecificGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersCompareToSpecificGroup" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetAllUsersCompareToSpecificGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersCompareToSpecificGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_SaveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUser" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_SaveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetVotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVotes" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetVotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetVote_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVote" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetVote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_DeleteVote_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVote" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_DeleteVote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_SaveVote_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVote" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_SaveVote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_Vote_InputMessage">
+    <wsdl:part name="parameters" element="tns:Vote" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_Vote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetAllVotedPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVotedPoints" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetAllVotedPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVotedPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetAvailablePoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailablePoints" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetAvailablePoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailablePointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetBudget_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBudget" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetBudget_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBudgetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetProductVoteReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductVoteReport" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetProductVoteReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductVoteReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_StartSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartSession" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_StartSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessage" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_GetMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_SaveMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMessage" />
+  </wsdl:message>
+  <wsdl:message name="IDelightService_SaveMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMessageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDelightService">
+    <wsdl:operation name="GetAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetAccounts" message="tns:IDelightService_GetAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetAccountsResponse" message="tns:IDelightService_GetAccounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserStateInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetUserStateInfo" message="tns:IDelightService_GetUserStateInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetUserStateInfoResponse" message="tns:IDelightService_GetUserStateInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/Authenticate" message="tns:IDelightService_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/AuthenticateResponse" message="tns:IDelightService_Authenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/RegisterUser" message="tns:IDelightService_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/RegisterUserResponse" message="tns:IDelightService_RegisterUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterOwner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/RegisterOwner" message="tns:IDelightService_RegisterOwner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/RegisterOwnerResponse" message="tns:IDelightService_RegisterOwner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetAccountId" message="tns:IDelightService_GetAccountId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetAccountIdResponse" message="tns:IDelightService_GetAccountId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetCategories" message="tns:IDelightService_GetCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetCategoriesResponse" message="tns:IDelightService_GetCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetCategory" message="tns:IDelightService_GetCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetCategoryResponse" message="tns:IDelightService_GetCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVotedCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetVotedCategories" message="tns:IDelightService_GetVotedCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetVotedCategoriesResponse" message="tns:IDelightService_GetVotedCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetProductsFromCategory" message="tns:IDelightService_GetProductsFromCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetProductsFromCategoryResponse" message="tns:IDelightService_GetProductsFromCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/AddProductToCategory" message="tns:IDelightService_AddProductToCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/AddProductToCategoryResponse" message="tns:IDelightService_AddProductToCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductFromCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/RemoveProductFromCategory" message="tns:IDelightService_RemoveProductFromCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/RemoveProductFromCategoryResponse" message="tns:IDelightService_RemoveProductFromCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/DeleteCategory" message="tns:IDelightService_DeleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/DeleteCategoryResponse" message="tns:IDelightService_DeleteCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/SaveCategory" message="tns:IDelightService_SaveCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/SaveCategoryResponse" message="tns:IDelightService_SaveCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetProducts" message="tns:IDelightService_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetProductsResponse" message="tns:IDelightService_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetProduct" message="tns:IDelightService_GetProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetProductResponse" message="tns:IDelightService_GetProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductsCompareToSpecificCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetAllProductsCompareToSpecificCategory" message="tns:IDelightService_GetAllProductsCompareToSpecificCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetAllProductsCompareToSpecificCategoryResponse" message="tns:IDelightService_GetAllProductsCompareToSpecificCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/DeleteProduct" message="tns:IDelightService_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/DeleteProductResponse" message="tns:IDelightService_DeleteProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/SaveProduct" message="tns:IDelightService_SaveProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/SaveProductResponse" message="tns:IDelightService_SaveProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetUserGroups" message="tns:IDelightService_GetUserGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetUserGroupsResponse" message="tns:IDelightService_GetUserGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetUserGroup" message="tns:IDelightService_GetUserGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetUserGroupResponse" message="tns:IDelightService_GetUserGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersFromGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetUsersFromGroup" message="tns:IDelightService_GetUsersFromGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetUsersFromGroupResponse" message="tns:IDelightService_GetUsersFromGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/AddUserToGroup" message="tns:IDelightService_AddUserToGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/AddUserToGroupResponse" message="tns:IDelightService_AddUserToGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/RemoveUserFromGroup" message="tns:IDelightService_RemoveUserFromGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/RemoveUserFromGroupResponse" message="tns:IDelightService_RemoveUserFromGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/DeleteUserGroup" message="tns:IDelightService_DeleteUserGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/DeleteUserGroupResponse" message="tns:IDelightService_DeleteUserGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/SaveUserGroup" message="tns:IDelightService_SaveUserGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/SaveUserGroupResponse" message="tns:IDelightService_SaveUserGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetUsers" message="tns:IDelightService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetUsersResponse" message="tns:IDelightService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetUser" message="tns:IDelightService_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetUserResponse" message="tns:IDelightService_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersCompareToSpecificGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetAllUsersCompareToSpecificGroup" message="tns:IDelightService_GetAllUsersCompareToSpecificGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetAllUsersCompareToSpecificGroupResponse" message="tns:IDelightService_GetAllUsersCompareToSpecificGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/DeleteUser" message="tns:IDelightService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/DeleteUserResponse" message="tns:IDelightService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/SaveUser" message="tns:IDelightService_SaveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/SaveUserResponse" message="tns:IDelightService_SaveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVotes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetVotes" message="tns:IDelightService_GetVotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetVotesResponse" message="tns:IDelightService_GetVotes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetVote" message="tns:IDelightService_GetVote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetVoteResponse" message="tns:IDelightService_GetVote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/DeleteVote" message="tns:IDelightService_DeleteVote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/DeleteVoteResponse" message="tns:IDelightService_DeleteVote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/SaveVote" message="tns:IDelightService_SaveVote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/SaveVoteResponse" message="tns:IDelightService_SaveVote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Vote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/Vote" message="tns:IDelightService_Vote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/VoteResponse" message="tns:IDelightService_Vote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVotedPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetAllVotedPoints" message="tns:IDelightService_GetAllVotedPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetAllVotedPointsResponse" message="tns:IDelightService_GetAllVotedPoints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailablePoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetAvailablePoints" message="tns:IDelightService_GetAvailablePoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetAvailablePointsResponse" message="tns:IDelightService_GetAvailablePoints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBudget">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetBudget" message="tns:IDelightService_GetBudget_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetBudgetResponse" message="tns:IDelightService_GetBudget_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductVoteReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetProductVoteReport" message="tns:IDelightService_GetProductVoteReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetProductVoteReportResponse" message="tns:IDelightService_GetProductVoteReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/StartSession" message="tns:IDelightService_StartSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/StartSessionResponse" message="tns:IDelightService_StartSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/GetMessage" message="tns:IDelightService_GetMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/GetMessageResponse" message="tns:IDelightService_GetMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelightService/SaveMessage" message="tns:IDelightService_SaveMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelightService/SaveMessageResponse" message="tns:IDelightService_SaveMessage_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDelightService" type="tns:IDelightService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAccounts">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserStateInfo">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetUserStateInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterOwner">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/RegisterOwner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountId">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetAccountId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVotedCategories">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetVotedCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromCategory">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetProductsFromCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToCategory">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/AddProductToCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductFromCategory">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/RemoveProductFromCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/DeleteCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCategory">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/SaveCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductsCompareToSpecificCategory">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetAllProductsCompareToSpecificCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/DeleteProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProduct">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/SaveProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroups">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetUserGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroup">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetUserGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersFromGroup">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetUsersFromGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/AddUserToGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromGroup">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/RemoveUserFromGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserGroup">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/DeleteUserGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserGroup">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/SaveUserGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersCompareToSpecificGroup">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetAllUsersCompareToSpecificGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/SaveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVotes">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetVotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVote">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetVote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVote">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/DeleteVote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVote">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/SaveVote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vote">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/Vote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVotedPoints">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetAllVotedPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailablePoints">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetAvailablePoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBudget">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetBudget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductVoteReport">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetProductVoteReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSession">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/StartSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/GetMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMessage">
+      <soap:operation soapAction="http://tempuri.org/IDelightService/SaveMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DelightService">
+    <wsdl:port name="BasicHttpBinding_IDelightService" binding="tns:BasicHttpBinding_IDelightService">
+      <soap:address location="http://localhost:55502/DelightService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

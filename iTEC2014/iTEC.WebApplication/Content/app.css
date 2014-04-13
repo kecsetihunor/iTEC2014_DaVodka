@@ -1,0 +1,477 @@
+/*@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == break-screens {
+    @media only screen and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+  @else if $media == smaller-break-small {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == larger-break-small {
+    @media only screen and (min-width: $break-small) { @content; }
+  }
+  @else if $media == smaller-break-large {
+    @media only screen and (max-width: $break-large) { @content; }
+  }
+  @else if $media == mobile {
+    @media only screen and (min-width: $break-tiny) and (max-width: $break-small) { @content; }
+  }
+}*/
+/* SHELL */
+.shell-content {
+  position: relative;
+  max-width: 1024px;
+  min-width: 320px;
+  height: 100%;
+  margin: 0px auto;
+  padding: 0px 15px 0px 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.shell-content .vertical-align {
+  text-align: center;
+}
+header {
+  display: none;
+}
+header.visible {
+  display: block;
+}
+/* LOADING */
+.loading-container .vertical-align {
+  text-align: center;
+}
+.loading-container .vertical-align .content .number {
+  margin-bottom: -5px;
+}
+.page-content {
+  margin: 0px auto;
+}
+/* WELCOME */
+.welcome-container .title {
+  max-width: none;
+  margin: 20px 0px 50px;
+}
+.welcome-container .button {
+  padding: 15px 0px;
+}
+/* LOGIN */
+.login-container .title,
+.register-container .title {
+  margin: 15px 0px 25px;
+}
+.login-container > .message,
+.register-container > .message {
+  margin-top: 10px;
+  text-align: center;
+}
+.login-container .avatar {
+  position: absolute;
+  top: 25px;
+  left: -120px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -khtml-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+/* HEADER */
+.header-container {
+  height: 70px;
+  line-height: 70px;
+  overflow: hidden;
+  z-index: 1;
+}
+.header-container .logo {
+  left: 10px;
+  width: 234px;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -khtml-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.header-container .logo a {
+  display: block;
+  width: 234px;
+  height: 100%;
+  background: url('images/logo.png');
+}
+.header-container .account .avatar {
+  top: 10px;
+  right: 150px;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -khtml-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.header-container .account .info {
+  width: 150px;
+  line-height: 15px;
+  padding: 20px 0px 20px 10px;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -khtml-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.header-container .account .info .username {
+  width: 150px;
+}
+.header-container .account .info .logout {
+  text-transform: lowercase;
+}
+.header-container .account .bar {
+  right: 25px;
+  font-size: 23px;
+  cursor: pointer;
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -khtml-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.modal {
+  overflow: hidden;
+}
+.modal .modal-dialog {
+  margin: 0px auto;
+  padding: 20px;
+  width: 1024px;
+  height: 100%;
+  /*@include respond-to(break-screens) {
+      width: auto;
+    }*/
+}
+.modal .modal-dialog .modal-content {
+  height: 100%;
+}
+.modal .modal-dialog .modal-content .modal-header {
+  height: 60px;
+  line-height: 60px;
+  padding: 0px;
+}
+.modal .modal-dialog .modal-content .modal-header .modal-title {
+  margin: 0px;
+  font-weight: bold;
+  line-height: 60px;
+  padding-left: 20px;
+}
+.modal .modal-dialog .modal-content .modal-header .close {
+  margin-top: 0px;
+  padding: 0px 20px;
+  font-size: 300%;
+  line-height: 60px;
+}
+.modal .modal-dialog .modal-content .modal-body {
+  top: 60px;
+  bottom: 60px;
+  padding: 0px;
+}
+.modal .modal-dialog .modal-content .modal-footer {
+  height: 60px;
+  padding: 9px 15px;
+  /*@include respond-to(handhelds) {
+          padding-left: 2%;
+          padding-right: 2%;
+          
+          .btn {
+            width: 49%;
+            margin: 0px;
+            
+            &:first-child {
+              float: left;
+            }
+          }
+        }*/
+}
+.modal .modal-dialog .modal-content .modal-footer .btn {
+  display: inline-block;
+  width: 150px;
+}
+.task-container {
+  white-space: nowrap;
+}
+.task-container > .content .welcome {
+  margin-top: 30px;
+}
+.task-container > .content .welcome .button {
+  margin: 0px auto;
+  max-width: 320px;
+}
+.task-container > .content > .types {
+  display: inline-block;
+}
+.task-container .circle {
+  width: 140px;
+  height: 140px;
+  margin: 10px;
+  float: left;
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.1);
+  line-height: 120px;
+  text-align: center;
+}
+.task-container .circle .text {
+  font-size: 25px;
+}
+.task-container .circle .icon {
+  font-size: 60px;
+}
+.management-container {
+  white-space: nowrap;
+}
+.management-container > .content {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  min-height: 465px;
+  height: 100%;
+  margin: 0px auto;
+}
+.management-container > .content > .points {
+  padding: 20px;
+  text-align: center;
+  font-family: 'Lato';
+  font-size: 30px;
+  font-weight: 200;
+}
+.vote-container {
+  height: 100%;
+  white-space: nowrap;
+}
+.vote-container > .content {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+}
+.vote-container > .content > .points {
+  padding: 20px;
+  text-align: center;
+  font-family: 'Lato';
+  font-size: 30px;
+  font-weight: 200;
+}
+.vote-container .types {
+  margin: 20px 0px 40px 0px;
+}
+.vote-container .modal .loader:not(.hidden) + .information {
+  display: none;
+}
+.vote-container .modal .information .circle {
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.7), 0px 1px 2px rgba(0, 0, 0, 0.1);
+  /*@include respond-to(handhelds) {
+          float: none;
+          margin: 0px 0px 25px 0px;
+          
+          &:last-child {
+            margin: 0px;
+          }
+        }*/
+}
+.vote-container .modal .information .circle .icon {
+  color: #536196;
+}
+.vote-container .modal .information .circle:not([disabled]):hover {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.01), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.vote-container .modal .information .subtitle {
+  font-size: 120%;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+.vote-container .modal .information.general .subtitle {
+  text-align: left;
+}
+.vote-container .modal .information.general .about {
+  padding: 5px 20px;
+  width: 320px;
+  /*@include respond-to(handhelds) {
+            width: auto;
+            right: 0px;
+            height: 200px;
+          }*/
+}
+.vote-container .modal .information.general .images {
+  left: 320px;
+  padding: 20px 0px 5px 0px;
+  /*@include respond-to(handhelds) {
+            top: 200px;
+            left: 0px;
+            height: auto;
+            border-top: 1px solid #e5e5e5;
+            
+            .wrapper {
+              width: 310px;
+              margin: 0px auto;
+              
+              .image:nth-child(2n) {
+                margin-right: 0px;
+              }
+            }
+          }*/
+}
+.vote-container .modal .information.general .images .image {
+  float: left;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 1px #ccc;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  filter: url(filters.svg#grayscale);
+  /* Firefox 3.5+ */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(1);
+  /* Google Chrome, Safari 6+ & Opera 15+ */
+}
+.vote-container .modal .information.general .images .image:last-child {
+  margin-bottom: 0px;
+}
+.vote-container .modal .information.menu {
+  text-align: left;
+  padding: 5px 20px;
+}
+.vote-container .modal .information.menu .subtitle {
+  width: 100%;
+  text-align: center;
+}
+.vote-container .modal .information.menu .entry {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  padding: 5px 0px 5px 5px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.vote-container .modal .information.menu .entry .name {
+  right: 50px;
+}
+.vote-container .modal .information.menu .entry .price {
+  text-align: right;
+  width: 50px;
+}
+.vote-container .group.table {
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  width: auto;
+}
+.vote-container .group.table > .content > .result {
+  /*> div {
+                    position: relative;
+                    overflow: hidden;
+                    background: none;
+                    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+
+                    > .text {
+                        line-height: 20px;
+                        text-align: left;
+                        padding: 0px 20px;
+                        opacity: 1;
+                        cursor: pointer;
+
+                        > .name {
+                            font-size: 110%;
+                            font-weight: bold;
+                            padding-top: 30px;
+                        }
+
+                        > .address, .rating {
+                            font-size: 90%;
+                        }
+                    }
+
+                    > .info, > .select {
+                        font-size: 200%;
+                        height: 50%;
+                        line-height: 60px;
+                        .crossBrowser(transition, all 0.2s ease-in-out);
+                        cursor: pointer;
+
+                        &:hover {
+                            background: rgba(128, 128, 128, 0.2);
+                        }
+                    }
+
+                    > .info {
+                        top: -50%;
+                    }
+
+                    > .select {
+                        bottom: -50%;
+                    }
+
+                    &.active {
+                        > .text {
+                            opacity: 0.2;
+                        }
+
+                        > .info {
+                            top: 0px;
+                            border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+                        }
+
+                        > .select {
+                            bottom: 0px;
+                        }
+                    }
+                    /*@include respond-to(handhelds) {
+            margin: -1px 2% 2% -1px;
+            width: 98%;
+          }
+          
+          @include respond-to(medium-screens) {
+            margin: -1px 2% 2% -1px;
+            width: 48%;
+          }
+                
+            }
+
+            > .message {
+                font-weight: bold;
+                font-size: 300%;
+                text-transform: uppercase;
+                /*@include respond-to(handhelds) {
+          font-size: 200%;
+        }*/
+}
+.vote-container .group.table.category {
+  top: 150px;
+}
+.vote-container .group.table.vote {
+  top: 190px;
+}
+.place-container .title {
+  margin-bottom: 20px;
+}
+.slider.slider-horizontal > .slider-track {
+  height: 5px;
+}
+.slider.slider-horizontal > .slider-track > .slider-handle {
+  margin-top: -7.5px;
+}

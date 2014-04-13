@@ -1,0 +1,127 @@
+$base: #fff;
+$invertBase: invert($base);
+$background: #ecf0f1;
+$foreground: #666;
+$error: #e74c3c;
+$lightenForeground: #ecf0f1; 
+$darkenBackground: #2c3e50;
+$highlight: #3498db;
+$font: 1.5em;
+
+@function highlight($color) {
+  @if $base == #fff {
+    @return lighten($color, 3.92%)
+  } @else {
+    @return darken($color, 3.92%)
+  }
+}
+
+@function unhighlight($color) {
+  @if $base == #fff {
+    @return darken($color, 3.92%)
+  } @else {
+    @return lighten($color, 3.92%)
+  }
+}
+
+%box-shadow {
+  box-shadow: 0px 0px 0px 1px transparentize($base, .3);
+}
+
+.blur {
+  text-shadow: 0px 0px 20px $base;
+  color: hsla(0,0%,0%,0);
+}
+
+body {
+  background: $background;
+  color: $foreground;
+}
+
+a, .color-highlight {
+  color: $highlight;
+  
+  &:hover {
+    color: highlight($highlight);
+  }
+}
+
+.color-normal {
+    color: $foreground;
+}
+
+.loader {
+  border-bottom-color: transparentize($invertBase, .8);
+  border-left-color: transparentize($invertBase, .8);
+  border-right-color: $highlight;
+  border-top-color: $highlight;
+}
+
+.group {
+  background: transparentize($base, .8);
+  @extend %box-shadow;
+
+  > label:first-child,
+  &.captcha .content {
+    border-color: transparentize($base, .3);
+  }
+  
+  .error {
+    color: $error;
+    
+    &.message {
+      border-color: transparentize($base, .3);
+    }
+  }
+}
+
+.loading-container {
+  background: $darkenBackground;
+  
+  .content {
+    font-size: $font * 1.2;
+  }
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content; }
+  @-moz-keyframes #{$name} { @content; }
+  @-o-keyframes #{$name} { @content; }
+  @-ms-keyframes #{$name} { @content; }
+  @-khtml-keyframes #{$name} { @content; }
+  @keyframes #{$name} { @content; }
+}
+
+@mixin transform($name) {
+  -webkit-transform: #{$name};
+  -moz-transform: #{$name};
+  -o-transforms: #{$name};
+  -ms-transform: #{$name};
+  -khtml-transform: #{$name};
+  transform: #{$name};
+}
+
+@include keyframes(enlargeon) {
+  from {
+    font-size: inherit;
+  }
+  to {
+    font-size: $font * 1.35;
+  }
+}
+
+@include keyframes(bluroff) {
+  to {
+    text-shadow: none;
+    color: $lightenForeground;
+  }
+}
+
+@include keyframes(spin) {
+  from {
+    @include transform('rotate(0deg)');
+  }
+  to {
+    @include transform('rotate(359deg)');
+  }
+}

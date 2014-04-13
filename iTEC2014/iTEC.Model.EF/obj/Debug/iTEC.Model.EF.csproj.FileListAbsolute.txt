@@ -1,0 +1,6 @@
+D:\University\New folder\iTEC2014\iTEC.Services\bin\iTEC.Model.EF.dll.config
+D:\University\New folder\iTEC2014\iTEC.Services\bin\iTEC.Model.EF.dll
+D:\University\New folder\iTEC2014\iTEC.Services\bin\iTEC.Model.EF.pdb
+D:\University\New folder\iTEC2014\iTEC.Model.EF\obj\Debug\iTEC.Model.EF.csprojResolveAssemblyReference.cache
+D:\University\New folder\iTEC2014\iTEC.Model.EF\obj\Debug\iTEC.Model.EF.dll
+D:\University\New folder\iTEC2014\iTEC.Model.EF\obj\Debug\iTEC.Model.EF.pdb

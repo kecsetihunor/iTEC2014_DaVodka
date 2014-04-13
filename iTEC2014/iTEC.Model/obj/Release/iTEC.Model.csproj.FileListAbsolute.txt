@@ -1,0 +1,10 @@
+D:\University\New folder\iTEC2014\iTEC.Model\bin\Release\iTEC.Model.dll.config
+D:\University\New folder\iTEC2014\iTEC.Model\bin\Release\iTEC.Model.dll
+D:\University\New folder\iTEC2014\iTEC.Model\bin\Release\iTEC.Model.pdb
+D:\University\New folder\iTEC2014\iTEC.Model\bin\Release\EntityFramework.dll
+D:\University\New folder\iTEC2014\iTEC.Model\bin\Release\EntityFramework.SqlServer.dll
+D:\University\New folder\iTEC2014\iTEC.Model\bin\Release\EntityFramework.xml
+D:\University\New folder\iTEC2014\iTEC.Model\bin\Release\EntityFramework.SqlServer.xml
+D:\University\New folder\iTEC2014\iTEC.Model\obj\Release\iTEC.Model.csprojResolveAssemblyReference.cache
+D:\University\New folder\iTEC2014\iTEC.Model\obj\Release\iTEC.Model.dll
+D:\University\New folder\iTEC2014\iTEC.Model\obj\Release\iTEC.Model.pdb

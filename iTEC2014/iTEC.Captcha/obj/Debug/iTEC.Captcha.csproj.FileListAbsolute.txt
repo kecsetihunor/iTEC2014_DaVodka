@@ -1,0 +1,10 @@
+D:\University\New folder\iTEC2014\iTEC.Captcha\bin\Debug\iTEC.Captcha.dll.config
+D:\University\New folder\iTEC2014\iTEC.Captcha\bin\Debug\iTEC.Captcha.dll
+D:\University\New folder\iTEC2014\iTEC.Captcha\bin\Debug\iTEC.Captcha.pdb
+D:\University\New folder\iTEC2014\iTEC.Captcha\bin\Debug\EntityFramework.dll
+D:\University\New folder\iTEC2014\iTEC.Captcha\bin\Debug\EntityFramework.SqlServer.dll
+D:\University\New folder\iTEC2014\iTEC.Captcha\bin\Debug\EntityFramework.xml
+D:\University\New folder\iTEC2014\iTEC.Captcha\bin\Debug\EntityFramework.SqlServer.xml
+D:\University\New folder\iTEC2014\iTEC.Captcha\obj\Debug\iTEC.Captcha.dll
+D:\University\New folder\iTEC2014\iTEC.Captcha\obj\Debug\iTEC.Captcha.pdb
+D:\University\New folder\iTEC2014\iTEC.Captcha\obj\Debug\iTEC.Captcha.csprojResolveAssemblyReference.cache

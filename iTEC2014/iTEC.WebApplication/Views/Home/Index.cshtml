@@ -1,0 +1,7 @@
+﻿@model Int32
+
+@Html.AntiForgeryToken()
+
+<div id="applicationHost">
+    @Html.Partial("_LoadingPartial", Model)
+</div>

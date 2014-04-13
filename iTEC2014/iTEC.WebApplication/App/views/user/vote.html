@@ -1,0 +1,11 @@
+﻿<div class="vote-container">
+    <div class="content" data-bind="with: entity">
+        <div class="title vote">
+            <a class="left" href="#" data-bind="click: back, visible: selected"><i class="fa fa-fw fa-lg fa-chevron-left"></i></a>
+            Vote!
+        </div>
+        <div class="points">You got <span class="accent" data-bind="text: points"></span> points to spend.</div>
+        <div class="group table category vote" data-bind="template: { name: 'vote-category-template', data: categories }, hidden: selected"></div>
+        <div class="group table product vote" data-bind="template: { name: 'vote-product-template', data: products }, visible: selected"></div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿@model Int32
+
+<div class="loading-container stretch">
+    <div class="vertical-align">
+        <div class="content blur">
+            <div class="number enlarge">0</div>
+            <div class="text">VOTES MADE</div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var count = parseInt("@Model", 10);
+        var iterations = 30;
+        var step = count / iterations;
+        var value = 0;
+
+        var $field = $(".loading-container .number");
+
+        var timestamp = new Date();
+        counter();
+        var executionTime = new Date().getTime() - timestamp.getTime();
+        var time = 1000 / (iterations + 1) - executionTime * 2;
+
+        var interval = setInterval(function () {
+            counter();
+        }, time);
+
+        function counter() {
+            value += step;
+            if (value > count) {
+                update(count);
+                clearInterval(interval);
+                $field.parent().addClass("off");
+                $field.addClass("on");
+                setTimeout(function () {
+                    $('body').addClass('loaded');
+                }, 100);
+            } else {
+                update(value);
+            }
+        }
+
+        function update(value) {
+            $field.text(parseInt(value, 10).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+        }
+    });
+</script>

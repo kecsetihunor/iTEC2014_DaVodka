@@ -1,0 +1,579 @@
+﻿$groupHeight: 40px;
+$groupLeft: 20%;
+
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300);
+
+@mixin transform($name) {
+  -webkit-transform: #{$name};
+  -moz-transform: #{$name};
+  -o-transforms: #{$name};
+  -ms-transform: #{$name};
+  -khtml-transform: #{$name};
+  transform: #{$name};
+}
+
+@mixin crossBrowser($name, $data) {
+  -webkit-#{$name}: #{$data};
+  -moz-#{$name}: #{$data};
+  -o-#{$name}: #{$data};
+  -ms-#{$name}: #{$data};
+  -khtml-#{$name}: #{$data};
+  #{$name}: #{$data};
+}
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+      $animations: #{$animations + nth($animate, $i)};
+
+      @if $i < $max {
+          $animations: #{$animations + ", "};
+      }
+  }
+  -webkit-animation: $animations;
+  -moz-animation:    $animations;
+  -o-animation:      $animations;
+  -ms-animation:     $animations;
+  -khtml-animation:  $animations;
+  animation:         $animations;
+}
+
+*, *:focus, *:active {
+  outline: 0;
+}
+
+.text-selection-none {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.stretch {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  
+  &.top {
+    bottom: auto;
+  }
+  
+  &.left {
+    right: auto;
+  }
+  
+  &.right {
+    left: auto;
+  }
+  
+  &.bottom {
+    top: auto;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+body {
+  font-family: 'Lato';
+  margin: 0px;
+  padding: 0px;
+}
+
+.group {
+  display: block;
+  position: relative;
+  border-bottom-width: 0px;
+  min-height: $groupHeight;
+  line-height: $groupHeight;
+  margin-bottom: 10px;
+  overflow: hidden;
+  
+  %control_stretch {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+  }
+  
+  %left {
+    @extend %control_stretch;
+    display: block;
+    left: 0px;
+    width: $groupLeft;
+    height: 100%;
+    text-align: center;
+    font-weight: bold;
+    border-right-width: 1px;
+    border-right-style: dashed;
+    margin-bottom: 0px;
+    @extend .text-selection-none;
+  }
+  
+  %right {
+    @extend %control_stretch;
+    display: block;
+    left: $groupLeft;
+    right: 0px;
+    width: 100% - $groupLeft;
+    height: 100%;
+    margin: 0px;
+    border: none;
+    background: transparent;
+    padding: 0px 10px;
+    text-align: left;
+  }
+  
+  > label:first-child {
+    @extend %left;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+    
+    > * {
+      cursor: pointer;
+    }
+  
+    > .vertical-align {
+      text-align: center;
+    }
+  }
+  
+  > input {
+    @extend %right;
+    height: $groupHeight;
+    line-height: 20px;
+    box-shadow: none;
+    transition: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: inherit;
+  }
+  
+  .error {
+    display: block;
+    cursor: default;
+    
+    &.notification {
+      position: absolute;
+      top: 0px;
+      right: 5px;
+    }
+    
+    &.message {
+      display: none;
+      position: relative;
+      left: $groupLeft;
+      top: $groupHeight;
+      width: 100% - $groupLeft;
+      min-height: $groupHeight * 2;
+      line-height: $groupHeight;
+      padding: 0px 5px $groupHeight 5px;
+      text-align: right;
+      font-weight: bold;
+      border-top-width: 1px;
+      border-top-style: dashed;
+    }
+  }
+  
+  &.captcha {
+    min-height: $groupHeight * 3 + 1;
+    
+    > label:first-child {
+      line-height: $groupHeight * 3 + 1;
+    }
+      
+    > .content {
+      @extend %right;
+      height: $groupHeight * 2;
+      border-bottom: 1px dashed transparent;
+    
+      > .image {
+        top: 1px;
+        right: 1px;
+        background-color: white;
+        background-position: 0px 0px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        transition: opacity 0.5s linear;
+        opacity: 0;
+        box-sizing: border-box;
+
+        cursor: pointer;
+        
+        &.on {
+          opacity: 1;
+        }
+      }
+      
+      > .loader {
+        width: $groupHeight;
+        height: $groupHeight;
+        margin: 18px auto;
+        transition: opacity 0.5s linear;
+        opacity: 1;
+        
+        &.off {
+          opacity: 0;
+        }
+      }
+    }
+    
+    > input {
+      top: $groupHeight * 2;
+      height: $groupHeight;
+      border-top-right-radius: 0px;
+    }
+  
+    .error {
+      &.notification {
+        top: $groupHeight * 2;
+      }
+      
+      &.message {
+        top: $groupHeight * 3;
+        padding-bottom: $groupHeight * 3 + 1;
+      }
+    }
+  }
+  
+  &.checkbox {
+    input[type="checkbox"] {
+      display: none;
+    }
+    
+    > label {
+      font-weight: bold;
+      cursor: pointer;
+        
+      &:first-of-type {
+        @extend %left;
+      }
+
+      &:not(:first-of-type) {
+        @extend %right;
+      }
+    } 
+  }
+  
+  &.table {
+    min-height: 4 * $groupHeight;
+    border-radius: 0px;
+    margin: 0px;
+    
+    > .header {
+      height: $groupHeight;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.7);
+      
+      > input[type=text] {
+        @extend %right;
+        left: 0px;
+        width: 100%;
+        height: $groupHeight;
+        line-height: 20px;
+        box-shadow: none;
+        transition: none;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: inherit;
+      }
+    }
+    
+    > .content {
+      position: absolute;
+      top: $groupHeight - 1px;
+      left: 0px;
+      right: 1px;
+      bottom: 0px;
+      padding: 10px 0px 0px 15px;
+      
+      > .result {
+        > div {
+          background: rgba(123, 43, 44, 0.1);
+          width: 24%;
+          height: $groupHeight * 3;
+          line-height: $groupHeight * 3;
+          text-align: center;
+          float: left;
+          margin: -1px 1% 1% -1px;
+        }
+        
+        &.empty + .vertical-align {
+          height: 100%;
+        }
+      }
+      
+      > .vertical-align {
+        height: auto;
+      
+        > .loader {
+          margin: 15px auto;
+        }
+      }
+    }
+  }
+}
+
+.vertical-align {
+  height: 100%;
+  
+  &:before {
+    content: '';
+    width: 0px;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  > .content {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.title {
+  font-size: 200%;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+.button {
+  display: block;
+  font-weight: 300;
+  font-size: 20px;
+  color: #666;
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  padding: 10px 0px;
+  margin: 0px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+
+  @extend .text-selection-none;
+  
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  &[disabled] {
+    cursor: auto;
+  }
+  
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+}
+
+.title {
+  color: rgba(102, 102, 102, 0.8);
+  font-weight: 100;
+  font-size: 40px;
+  text-transform: uppercase;
+  text-shadow: none;
+  border-bottom: 1px dashed #aaa;
+}
+  
+.loader {
+  display: block;
+  margin: 0px auto;
+  border: 2px solid transparent;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  
+  @include animation('spin .6s infinite linear');
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  background-color: white;
+  background-position: 0px 0px;
+  background-size: 100% 100%;
+  background-image: url('images/avatar.png');
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.50);
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+
+  &.large {
+    width: 500px;
+
+    &.fluid {
+      width: 100%;
+    }
+  }
+
+  &.medium {
+    width: 300px;
+
+    &.fluid {
+      width: 75%;
+    }
+  }
+
+  &.small {
+    width: 200px;
+
+    &.fluid {
+      width: 50%;
+    }
+  }
+}
+
+.enlarge.on {
+  @include animation('enlargeon .15s both');
+}
+
+.blur.off {
+  @include animation('bluroff .25s both');
+}
+
+.circle {
+  position: relative;
+  display: block;
+  padding: 0px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  @include crossBrowser('transition', 'all 0.4s ease-in-out');
+  cursor: default;
+  
+  %inside {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+  }
+  
+  .text {
+    @extend %inside;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    @include crossBrowser('transition', 'all 0.4s ease-in-out');
+    @include crossBrowser('transform', 'scale(0)');
+    color: #536196;
+  }
+  
+  .icon {
+    @extend %inside;
+    @include crossBrowser('transition', 'font 0.4s ease-in-out');
+    @include crossBrowser('transition', 'opacity 0.4s ease-in-out');
+    color: #536196;
+    opacity: 1;
+  }
+  
+  &:not([disabled]):hover {
+    box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    
+    .text {
+      @include crossBrowser('transform', 'scale(1)');
+      opacity: 1;
+    }
+    
+    .icon {
+      opacity: 0.3;
+    }
+  }
+}
+
+.workflow {
+  text-align: center;
+  
+  $size: 28px;
+  
+  > .steps {
+    position: relative;
+    display: inline-block;
+    height: $size;
+    
+    &:before {
+      position: absolute;
+      left: 0px;
+      top: 48%;
+      right: 0px;
+      height: 4%;
+      background: #fff;
+      display: block;
+      content: '';
+    }
+    
+    > .step {
+      position: relative;
+      display: inline-block;
+      border-radius: 50%;
+      width: $size;
+      height: $size;
+      margin: 0px 15px;
+      background: #ecf0f1;
+      box-shadow: inset 0px 0px 0px 2px #fff;
+      cursor: pointer;
+      @include crossBrowser('transition', 'all 0.2s ease-in-out');
+      
+      &:first-child {
+        margin-left: 0px;
+      }
+      
+      &:last-child {
+        margin-right: 0px;
+      }
+      
+      &:after {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        right: 25%;
+        bottom: 25%;
+        border-radius: 50%;
+        display: block;
+        content: '';
+        @include crossBrowser('transition', 'all 0.2s ease-in-out');
+      }
+      
+      &.active:after {
+        background: #3498db;
+      }
+      
+      &:hover {
+        box-shadow: inset 0px 0px 0px 2px #fff, 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+        
+        &:after {
+          top: 33%;
+          left: 33%;
+          right: 33%;
+          bottom: 33%;
+          background: #3498db;
+        }
+      }
+    }
+  }
+}
+
+.scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+}

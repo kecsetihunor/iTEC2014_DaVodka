@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/iTEC.BL.Interfaces.DTOs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/iTEC.BL.Interfaces.DTOs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55502/DelightService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfAccountAvatarDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountAvatarDTO" nillable="true" type="tns:AccountAvatarDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccountAvatarDTO" nillable="true" type="tns:ArrayOfAccountAvatarDTO" />
+  <xs:complexType name="AccountAvatarDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdentityDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Avatar" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Remember" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Role" type="xs:int" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AccountAvatarDTO" nillable="true" type="tns:AccountAvatarDTO" />
+  <xs:complexType name="IdentityDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdentityDTO" nillable="true" type="tns:IdentityDTO" />
+  <xs:complexType name="ArrayOfCategoryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoryDTO" nillable="true" type="tns:CategoryDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategoryDTO" nillable="true" type="tns:ArrayOfCategoryDTO" />
+  <xs:complexType name="CategoryDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Count" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CategoryDTO" nillable="true" type="tns:CategoryDTO" />
+  <xs:complexType name="EntityDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdentityDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityDTO" nillable="true" type="tns:EntityDTO" />
+  <xs:complexType name="ArrayOfVotedCategoryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VotedCategoryDTO" nillable="true" type="tns:VotedCategoryDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVotedCategoryDTO" nillable="true" type="tns:ArrayOfVotedCategoryDTO" />
+  <xs:complexType name="VotedCategoryDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CategoryDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Points" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VotedCategoryDTO" nillable="true" type="tns:VotedCategoryDTO" />
+  <xs:complexType name="ArrayOfVotedProductDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VotedProductDTO" nillable="true" type="tns:VotedProductDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVotedProductDTO" nillable="true" type="tns:ArrayOfVotedProductDTO" />
+  <xs:complexType name="VotedProductDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PricedProductDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Points" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VotedProductDTO" nillable="true" type="tns:VotedProductDTO" />
+  <xs:complexType name="PricedProductDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProductDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Price" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PricedProductDTO" nillable="true" type="tns:PricedProductDTO" />
+  <xs:complexType name="ProductDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityDTO">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductDTO" nillable="true" type="tns:ProductDTO" />
+  <xs:complexType name="ArrayOfPricedProductDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PricedProductDTO" nillable="true" type="tns:PricedProductDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPricedProductDTO" nillable="true" type="tns:ArrayOfPricedProductDTO" />
+  <xs:complexType name="ArrayOfProductFromCategoryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductFromCategoryDTO" nillable="true" type="tns:ProductFromCategoryDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductFromCategoryDTO" nillable="true" type="tns:ArrayOfProductFromCategoryDTO" />
+  <xs:complexType name="ProductFromCategoryDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdentityDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InGroup" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductFromCategoryDTO" nillable="true" type="tns:ProductFromCategoryDTO" />
+  <xs:complexType name="ArrayOfUserGroupDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserGroupDTO" nillable="true" type="tns:UserGroupDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserGroupDTO" nillable="true" type="tns:ArrayOfUserGroupDTO" />
+  <xs:complexType name="UserGroupDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Count" type="xs:int" />
+          <xs:element minOccurs="0" name="Points" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserGroupDTO" nillable="true" type="tns:UserGroupDTO" />
+  <xs:complexType name="ArrayOfUserDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDTO" nillable="true" type="tns:UserDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserDTO" nillable="true" type="tns:ArrayOfUserDTO" />
+  <xs:complexType name="UserDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdentityDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserDTO" nillable="true" type="tns:UserDTO" />
+  <xs:complexType name="ArrayOfUserFromGroupDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserFromGroupDTO" nillable="true" type="tns:UserFromGroupDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserFromGroupDTO" nillable="true" type="tns:ArrayOfUserFromGroupDTO" />
+  <xs:complexType name="UserFromGroupDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdentityDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InGroup" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserFromGroupDTO" nillable="true" type="tns:UserFromGroupDTO" />
+  <xs:complexType name="VoteDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdentityDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Account" nillable="true" type="tns:AccountAvatarDTO" />
+          <xs:element minOccurs="0" name="Points" type="xs:int" />
+          <xs:element minOccurs="0" name="Product" nillable="true" type="tns:PricedProductDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VoteDTO" nillable="true" type="tns:VoteDTO" />
+  <xs:complexType name="ArrayOfBudgetDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BudgetDTO" nillable="true" type="tns:BudgetDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBudgetDTO" nillable="true" type="tns:ArrayOfBudgetDTO" />
+  <xs:complexType name="BudgetDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Percentage" type="xs:double" />
+      <xs:element minOccurs="0" name="Points" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BudgetDTO" nillable="true" type="tns:BudgetDTO" />
+  <xs:complexType name="ProductVoteReportChart">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AreasplineReportChart">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductVoteReportChart" nillable="true" type="tns:ProductVoteReportChart" />
+  <xs:complexType name="AreasplineReportChart">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ReportChart">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AreasplineReportChart" nillable="true" type="tns:AreasplineReportChart" />
+  <xs:complexType name="ReportChart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Chart" nillable="true" type="tns:ChartType" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="tns:ArrayOfChartSeries" />
+      <xs:element minOccurs="0" name="Subtitle" nillable="true" type="tns:Title" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="tns:Title" />
+      <xs:element minOccurs="0" name="Tooltip" nillable="true" type="tns:Tooltip" />
+      <xs:element minOccurs="0" name="XAxis" nillable="true" type="tns:XAxis" />
+      <xs:element minOccurs="0" name="YAxis" nillable="true" type="tns:YAxis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportChart" nillable="true" type="tns:ReportChart" />
+  <xs:complexType name="ChartType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChartType" nillable="true" type="tns:ChartType" />
+  <xs:complexType name="ArrayOfChartSeries">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChartSeries" nillable="true" type="tns:ChartSeries" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChartSeries" nillable="true" type="tns:ArrayOfChartSeries" />
+  <xs:complexType name="ChartSeries">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Data" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChartSeries" nillable="true" type="tns:ChartSeries" />
+  <xs:complexType name="Title">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Title" nillable="true" type="tns:Title" />
+  <xs:complexType name="Tooltip">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Shared" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ValueSuffix" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tooltip" nillable="true" type="tns:Tooltip" />
+  <xs:complexType name="XAxis">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Categories" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="XAxis" nillable="true" type="tns:XAxis" />
+  <xs:complexType name="YAxis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Title" nillable="true" type="tns:Title" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="YAxis" nillable="true" type="tns:YAxis" />
+  <xs:complexType name="MessageDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdentityDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MessageBody" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MessageDTO" nillable="true" type="tns:MessageDTO" />
+</xs:schema>
